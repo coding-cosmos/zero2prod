@@ -15,6 +15,8 @@ actix-web = "4.14.1"
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 serde = { version = "1", features = ["derive"]}
 config= "0.15.25"
+uuid = { version = "1.24.1", features = ["v4"] }
+chrono = "0.4.45"
 
 [dependencies.sqlx]
 version = "0.9.0"
@@ -24,7 +26,9 @@ features = [
     "tls-rustls",
     "postgres",
     "macros",
-    "migrate"
+    "uuid",
+    "migrate",
+    "chrono"
 ]
 
 [dev-dependencies]
