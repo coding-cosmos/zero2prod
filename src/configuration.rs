@@ -27,14 +27,23 @@ impl DatabaseSettings {
     pub fn connection_string(&self) -> SecretString {
         format!(
             "postgres://{}:{}@{}:{}/{}",
-            self.username, self.password.expose_secret(), self.host, self.port, self.database_name
-        ).into()
+            self.username,
+            self.password.expose_secret(),
+            self.host,
+            self.port,
+            self.database_name
+        )
+        .into()
     }
 
     pub fn connection_string_without_db(&self) -> SecretString {
         format!(
             "postgres://{}:{}@{}:{}",
-            self.username, self.password.expose_secret(), self.host, self.port
-        ).into()
+            self.username,
+            self.password.expose_secret(),
+            self.host,
+            self.port
+        )
+        .into()
     }
 }
