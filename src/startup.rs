@@ -1,7 +1,9 @@
 use std::net::TcpListener;
 
 use crate::{
-    configuration::{DatabaseSettings, Settings}, email_client::EmailClient, routes::{confirm, health_check, publish_newsletter, subscribe},
+    configuration::{DatabaseSettings, Settings},
+    email_client::EmailClient,
+    routes::{confirm, health_check, publish_newsletter, subscribe},
 };
 use actix_web::{App, HttpServer, dev::Server, web};
 use sqlx::{PgPool, postgres::PgPoolOptions};
